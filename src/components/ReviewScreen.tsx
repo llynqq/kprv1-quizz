@@ -37,7 +37,7 @@ export function ReviewScreen({ incorrectAnswers, onComplete }: ReviewScreenProps
   };
 
   return (
-    <div className="flex-1 flex flex-col p-10 gap-10 overflow-hidden relative w-full h-full">
+    <div className="flex-1 flex flex-col p-4 sm:p-10 gap-6 sm:gap-10 overflow-hidden relative w-full h-full">
       <div className="max-w-3xl w-full mx-auto flex justify-between items-center z-20">
         <div className="flex items-center gap-4">
           <span className="text-xl font-medium text-slate-300">Review Mode</span>
@@ -53,7 +53,7 @@ export function ReviewScreen({ incorrectAnswers, onComplete }: ReviewScreenProps
         </button>
       </div>
 
-      <div className="flex-1 flex flex-col justify-center max-w-2xl z-10 w-full mx-auto">
+      <div className="flex-1 flex flex-col justify-start sm:justify-center max-w-2xl z-10 w-full mx-auto overflow-y-auto sm:overflow-visible pt-6 sm:pt-0">
         <AnimatePresence mode="wait">
           <motion.div 
             key={question.id}
@@ -106,11 +106,11 @@ export function ReviewScreen({ incorrectAnswers, onComplete }: ReviewScreenProps
         </AnimatePresence>
       </div>
 
-      <div className="max-w-3xl w-full mx-auto flex justify-between items-center z-20 pb-4">
+      <div className="max-w-3xl w-full mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-center z-20 pb-4 shrink-0">
         <button 
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-colors font-medium ${currentIndex === 0 ? 'text-slate-600 cursor-not-allowed hidden' : 'bg-white/10 hover:bg-white/15 text-white'}`}
+          className={`flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3 rounded-xl transition-colors font-medium ${currentIndex === 0 ? 'text-slate-600 cursor-not-allowed hidden sm:flex opacity-0 pointer-events-none' : 'bg-white/10 hover:bg-white/15 text-white'}`}
         >
           <ChevronLeft size={20} />
           Previous
@@ -118,7 +118,7 @@ export function ReviewScreen({ incorrectAnswers, onComplete }: ReviewScreenProps
 
         <button 
           onClick={handleNext}
-          className="flex items-center gap-2 px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition-all font-bold text-white shadow-lg shadow-blue-600/30 ml-auto"
+          className="flex w-full sm:w-auto justify-center items-center gap-2 px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition-all font-bold text-white shadow-lg shadow-blue-600/30 sm:ml-auto"
         >
           {currentIndex === incorrectAnswers.length - 1 ? 'Finish Review' : 'Next Question'}
           {currentIndex < incorrectAnswers.length - 1 && <ChevronRight size={20} />}

@@ -39,7 +39,7 @@ export function SummaryScreen({ quizState, onRetake, onReview }: SummaryScreenPr
         <h2 className="text-3xl font-bold text-white mb-2">Session Complete!</h2>
         <p className="text-slate-400 mb-10">Here's how you performed on this material.</p>
 
-        <div className="grid grid-cols-3 gap-6 w-full mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full mb-10">
           <div className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col items-center">
             <div className="text-4xl font-mono font-bold text-emerald-400 mb-1">{Math.round(accuracy)}%</div>
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Accuracy</div>
@@ -54,7 +54,7 @@ export function SummaryScreen({ quizState, onRetake, onReview }: SummaryScreenPr
           </div>
         </div>
 
-        <div className="w-full flex items-center justify-center mb-10 gap-8">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center mb-10 gap-4 sm:gap-8">
           <label className="flex items-center gap-3 cursor-pointer group">
             <div className="relative">
               <input 

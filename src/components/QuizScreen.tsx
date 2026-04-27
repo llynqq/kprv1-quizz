@@ -33,8 +33,8 @@ export function QuizScreen({ questions, currentQuestionIndex, onAnswer, onEndSes
   const letterMap = ['A', 'B', 'C', 'D', 'E', 'F'];
 
   return (
-    <div className="flex-1 flex p-10 gap-10 overflow-hidden relative w-full h-full">
-      <div className="flex-1 flex flex-col justify-center max-w-2xl z-10 w-full mx-auto">
+    <div className="flex-1 flex p-4 sm:p-10 gap-6 sm:gap-10 overflow-hidden relative w-full h-full">
+      <div className="flex-1 flex flex-col justify-start sm:justify-center max-w-2xl z-10 w-full mx-auto overflow-y-auto sm:overflow-visible pt-10 sm:pt-0">
         <AnimatePresence mode="wait">
           <motion.div 
             key={currentQuestion.id}
