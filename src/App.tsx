@@ -203,19 +203,27 @@ export default function App() {
           
           <div className="sm:hidden flex gap-2">
             {state.status === 'quiz' && (
-              <button 
-                onClick={handleEndSession}
-                className="px-4 py-2 rounded-full bg-white text-black hover:bg-slate-200 transition-colors text-xs font-bold shadow-xl shadow-white/5 active:scale-95 whitespace-nowrap"
-              >
-                End Session
-              </button>
+              <>
+                <button 
+                  onClick={handleRestart}
+                  className="px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium whitespace-nowrap"
+                >
+                  Zpět
+                </button>
+                <button 
+                  onClick={handleEndSession}
+                  className="px-4 py-2 rounded-full bg-white text-black hover:bg-slate-200 transition-colors text-xs font-bold shadow-xl shadow-white/5 active:scale-95 whitespace-nowrap"
+                >
+                  Ukončit test
+                </button>
+              </>
             )}
             {(state.status === 'summary' || state.status === 'review') && (
               <button 
                 onClick={handleRestart}
                 className="px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-xs font-medium whitespace-nowrap"
               >
-                Restart Session
+                Zpět na výběr
               </button>
             )}
           </div>
@@ -224,12 +232,12 @@ export default function App() {
         {state.status === 'quiz' && (
           <div className="flex items-center justify-center gap-6 sm:gap-8 w-full sm:w-auto">
             <div className="text-center">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold mb-1">Time</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold mb-1">Čas</div>
               <div className="text-lg font-medium font-mono tracking-wider">{formatTime(sessionTime)}</div>
             </div>
             <div className="h-10 w-[1px] bg-white/10"></div>
             <div className="text-center">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold mb-1">Accuracy</div>
+              <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 font-semibold mb-1">Úspěšnost</div>
               <div className="text-lg font-medium text-emerald-400 font-mono tracking-wider">{Math.round(accuracy)}%</div>
             </div>
           </div>
@@ -237,19 +245,27 @@ export default function App() {
 
         <div className="hidden sm:flex gap-3">
           {state.status === 'quiz' && (
-            <button 
-              onClick={handleEndSession}
-              className="px-5 py-2.5 rounded-full bg-white text-black hover:bg-slate-200 transition-colors text-sm font-bold shadow-xl shadow-white/5 active:scale-95 whitespace-nowrap"
-            >
-              End Session
-            </button>
+            <>
+              <button 
+                onClick={handleRestart}
+                className="px-5 py-2.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-sm font-medium whitespace-nowrap"
+              >
+                Změnit režim
+              </button>
+              <button 
+                onClick={handleEndSession}
+                className="px-5 py-2.5 rounded-full bg-white text-black hover:bg-slate-200 transition-colors text-sm font-bold shadow-xl shadow-white/5 active:scale-95 whitespace-nowrap"
+              >
+                Ukončit test
+              </button>
+            </>
           )}
           {(state.status === 'summary' || state.status === 'review') && (
             <button 
               onClick={handleRestart}
               className="px-5 py-2.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors text-sm font-medium whitespace-nowrap"
             >
-              Restart Session
+              Zpět na výběr
             </button>
           )}
         </div>

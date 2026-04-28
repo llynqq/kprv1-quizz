@@ -20,9 +20,10 @@ export function ZkouskaSetupScreen({ onBack, onStartQuiz }: ZkouskaSetupScreenPr
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      const newImages = Array.from(e.target.files).map(file => ({
-        file,
-        preview: URL.createObjectURL(file)
+      const files = Array.from(e.target.files);
+      const newImages = files.map((file: any) => ({
+        file: file as File,
+        preview: URL.createObjectURL(file as File)
       }));
       setImages(prev => [...prev, ...newImages]);
     }
