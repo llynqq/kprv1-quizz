@@ -9,7 +9,18 @@ interface ZkouskaSetupScreenProps {
   onStartQuiz: (questions: Question[]) => void;
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+let aiClient: GoogleGenAI | null = null;
+
+const getAi = () => {
+  if (!aiClient) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY není nastaven.");
+    }
+    aiClient = new GoogleGenAI({ apiKey });
+  }
+  return aiClient;
+};
 
 export function ZkouskaSetupScreen({ onBack, onStartQuiz }: ZkouskaSetupScreenProps) {
   const [activeTab, setActiveTab] = useState<'upload' | 'text'>('upload');
@@ -76,7 +87,7 @@ export function ZkouskaSetupScreen({ onBack, onStartQuiz }: ZkouskaSetupScreenPr
 
       contents.push("Generate a multiple choice quiz from the given content. Return only a valid JSON array of question objects where each object has: 'id' (a unique short string like q_1), 'text' (the question text), 'options' (an array of strings), 'correctOptionIndex' (the index of the correct option in the options array). Do NOT wrap in generic markdown blocks like ```json.");
 
-      const response = await ai.models.generateContent({
+      const response = await getAi().models.generateContent({
         model: 'gemini-2.5-flash',
         contents: contents,
       });
