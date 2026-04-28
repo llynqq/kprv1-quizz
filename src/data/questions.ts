@@ -2,253 +2,220 @@ import { Question } from '../types';
 
 export const predefinedQuestions: Question[] = [
   {
-    id: "q_1",
-    text: "Retroaktivita právní normy",
-    options: [
-      "znamená její zpětnou účinnost",
-      "je běžná v rodinném právu",
-      "je Ústavou ČR výslovně připuštěna jen v trestním právu",
-    ],
-    correctOptionIndex: 0,
+    id: "z_1",
+    text: "Součástí ústavního pořádku ČR je:",
+    options: ["Ústava ČR", "zákon č. 128/2000 Sb., o obcích", "občanský zákoník z roku 2016"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_2",
-    text: "Interpretace právního předpisu",
-    options: [
-      "na rozdíl od výkladu právního předpisu není právně upravena",
-      "bývá pravidelnou součástí aplikace práva",
-      "má stanovena pevná pravidla zákonem č. 309/1999 Sb.",
-    ],
-    correctOptionIndex: 1,
+    id: "z_2",
+    text: "Mezi prameny práva EU řadíme",
+    options: ["ústavní zákony", "směrnice", "zákony"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_3",
-    text: "Právo tvořené státem",
-    options: [
-      "může nabývat podoby práva objektivního a subjektivního",
-      "je vždy psané",
-      "nemá nikdy restriktivní funkci",
-    ],
-    correctOptionIndex: 0,
+    id: "z_3",
+    text: "Obce jsou",
+    options: ["vyšší územní samosprávné celky", "územní samosprávné celky", "státní organizace"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_4",
-    text: "Platná právní norma",
+    id: "z_4",
+    text: "Odvolání proti správnímu rozhodnutí",
     options: [
-      "je účinná",
-      "je publikována zákonem stanoveným způsobem",
-      "je publikována na webových stránkách Parlamentu ČR"
+      "je mimořádným opravným prostředkem, použije se proti rozhodnutí v právní moci",
+      "je řádným opravným prostředkem, použije se proti rozhodnutí, které není v právní moci",
+      "lze využít jen po souhlasu správního orgánu"
     ],
-    correctOptionIndex: 1,
+    correctOptionIndex: 1
   },
   {
-    id: "q_5",
-    text: "Prameny práva",
-    options: [
-      "můžeme dělit na formální a materiální",
-      "neexistují v právních řádech vzniklých před rokem 1945",
-      "vznikají vždy podle předem stanovených pravidel",
-    ],
-    correctOptionIndex: 0,
+    id: "z_5",
+    text: "Parlament ČR",
+    options: ["je orgánem moci výkonné", "se skládá ze dvou komor", "byl vytvořen z rozhodnutí Zákonodárného shromáždění v roce 1992"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_6",
-    text: "Prezidenta republiky v ČR",
-    options: [
-      "nelze zadržet",
-      "lze odvolat rozhodnutím Senátu",
-      "lze stíhat za přestupek",
-    ],
-    correctOptionIndex: 0,
+    id: "z_6",
+    text: "Prezident ČR",
+    options: ["nemůže být ani teoreticky postižen za spáchání trestného činu", "je hlavním velitelem ozbrojených sil ČR", "je volen Poslaneckou sněmovnou Parlamentu ČR na společné schůzi se Senátem"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_7",
-    text: "Senát Parlamentu ČR",
-    options: [
-      "je volen podle zásad většinového systému",
-      "může soudit prezidenta republiky",
-      "může být rozpuštěn Ústavním soudem",
-    ],
-    correctOptionIndex: 0,
+    id: "z_7",
+    text: "Pro vznik trestní odpovědnosti je pravidleně vyžadována jako forma zavinění",
+    options: ["úmysl", "nedbalost", "vina"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_8",
-    text: "Evropský soud pro lidská práva ve Štrasburku",
-    options: [
-      "je orgánem Rady Evropy",
-      "je orgánem Evropské unie",
-      "dosud nebyl zřízen",
-    ],
-    correctOptionIndex: 0,
+    id: "z_8",
+    text: "Právnická osoba",
+    options: ["se může doustit trestného činu znásilnění", "se nemůže dopustiti trestného činu znásilnění", "není vůbec trestně odpovědná"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_9",
-    text: "Jediným suverénem v ČR je",
-    options: [
-      "prezident republiky",
-      "Parlament ČR",
-      "lid",
-    ],
-    correctOptionIndex: 2,
+    id: "z_9",
+    text: "Právní normy EU",
+    options: ["mají aplikační přednost před vnitrostátními", "nejsou vynutitelné národními soudy", "zavazují jen obyvatele Belgie, Lucemburska a Francie"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_10",
-    text: "Lidská práva",
-    options: [
-      "jsou nezcizitelná",
-      "jsou vymahatelná proti státu jen prostřednictvím Ústavního soudu",
-      "zanikají, nejsou-li jejich nositelem realizována",
-    ],
-    correctOptionIndex: 0,
+    id: "z_10",
+    text: "Právo na územní samosprávu",
+    options: ["je garantované občanským zákoníkem", "je zmíněno v rámci ústavního pořádku ČR", "není v ČR zaručeno"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_11",
-    text: "Členským státem Evropských společenství/Evropské unie není",
-    options: [
-      "Lucembursko",
-      "Lichtenštejnsko",
-      "Německo",
-    ],
-    correctOptionIndex: 1,
+    id: "z_11",
+    text: "Přestupek",
+    options: ["má formální a materiální znaky", "může být spáchán jen fyzickou osobou", "nikdy nepostihuje poslance Poslanecké sněmovny Parlamentu ČR"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_12",
-    text: "Rada Evropské unie",
-    options: [
-      "je iniciativním a výkonným orgánem reprezentujícím zájmy EU",
-      "je rozhodovacím orgánem reprezentujícím zájmy členských států",
-      "je přímo voleným orgánem poradního typu",
-    ],
-    correctOptionIndex: 1,
+    id: "z_12",
+    text: "Správní řízení",
+    options: ["je vedeno zásadně ústně", "může být zahájeno z moci úřední", "nemůže být zahájeno na žádost"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_13",
-    text: "Mezi orgány EU nepatří",
-    options: [
-      "Evropský soudní dvůr",
-      "Soudní dvůr EU",
-      "Evropská centrální banka",
-    ],
-    correctOptionIndex: 0,
+    id: "z_13",
+    text: "Výklad právních předpisů",
+    options: ["je cestou ke zjištění obsahu právní normy", "je realizovín podle právně závazných postupů daných vyhláškou Ministerstva spravedlnosti", "je právnětoretická disciplína bez praktického významu"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_14",
-    text: "Princip nadřazenosti (primátu) v právu Evropských společenství znamená, že",
-    options: [
-      "v případě rozporu mezi normou práva ES a normou vnitrostátního práva má přednost norma práva vnitrostátního)",
-      "v případě rozporu mezi normou práva EU a normou vnitrostátního práva má přednost norma práva EU",
-      "dřívější norma má vždy přednost před normou pozdější",
-    ],
-    correctOptionIndex: 1,
+    id: "z_14",
+    text: "Za obec jedná navenek",
+    options: ["zastupitelstvo obce jako jediný demokraticky legitimovaný orgán obce", "starosta", "rada obce jako výkonný orgán obce"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_15",
-    text: "Evropský parlament",
-    options: [
-      "je tvořen přímo volenými poslanci, přičemž v jednotlivých státech je volen stejný počet poslanců",
-      "je tvořen přímo volenými poslanci, přičemž v jednotlivých státech je volen odlišný počet poslanců",
-      "je dvoukomorový",
-    ],
-    correctOptionIndex: 1,
+    id: "z_15",
+    text: "Základní lidská práva",
+    options: ["se promlčují", "jsou nepřenositelná", "existují v závislosti na rozhodnutí správního orgánu"],
+    correctOptionIndex: 1
+  }
+];
+
+export const zkouskaQuestions: Question[] = [
+  {
+    id: "zk_1",
+    text: "Postavení územní samosprávy jako suverénní moci ve státě je upraveno v Ústavě.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_16",
-    text: "Územní samosprávu v ČR představují",
-    options: [
-      "obce",
-      "okresy",
-      "krajské úřady",
-    ],
-    correctOptionIndex: 0,
+    id: "zk_2",
+    text: "Postavení Nejvyššího kontrolního úřadu jako suverénního orgánu je upraveno v Ústavě.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_17",
-    text: "Tzv. smíšený model výkonu veřejné správ v ČR spočívá v tom, že",
-    options: [
-      "státní orgány vykonávají také některé funkce celků územní samosprávy",
-      "obce, nikoliv však kraje, zajišťují výkon také státní správy",
-      "obce a kraje vykonávají také část státní správy",
-    ],
-    correctOptionIndex: 2,
+    id: "zk_3",
+    text: "Stát dbá o šetrné využívání přírodních zdrojů, je ústavní princip.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_18",
-    text: "Opatření obecné povahy",
-    options: [
-      "představuje jednu z forem činnosti orgánů veřejné správy",
-      "je obecně závazným právním aktem vydávaným obcemi v samostatné působnosti",
-      "může být vydáno kterýmkoli správním orgánem bez dalšího",
-    ],
-    correctOptionIndex: 0,
+    id: "zk_4",
+    text: "Do obecné soudní soustavy patří:",
+    options: ["Okresní, krajské, vrchní a Nejvyšší soud", "Evropský soud pro lidská práva, Evropský soudní dvůr, Ústavní soud", "Arbitrážní a rozhodčí orgány", "Všechny státní orgány"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_19",
-    text: "Správní rozhodnutí",
-    options: [
-      "může být vydáváno opakovaně ve stejné věci i tehdy, nabylo-li předchozí rozhodnutí právní moci",
-      "zavazuje obecně určený okruh adresátů",
-      "má zásadně písemnou formu",
-    ],
-    correctOptionIndex: 2,
+    id: "zk_5",
+    text: "Regulaci lidského chování a chování států, které působí klimatickou změnu, upravuje tato mezinárodní smlouva:",
+    options: ["Závěrečný akt Helsinské konference", "Kjótský protokol k Rámcové dohodě z Ria", "Římský statut", "Kyjevský protokol"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_20",
-    text: "Odvolání proti správnímu rozhodnutí se pravidelně podává",
-    options: [
-      "u správního orgánu, který napadené rozhodnutí vydal",
-      "u nadřízeného správního orgánu orgánu, který napadené rozhodnutí vydal",
-      "v odvolací lhůtě 30 dnů",
-    ],
-    correctOptionIndex: 0,
+    id: "zk_6",
+    text: "Součástí ústavního pořádku ČR je též Listina základních práv a svobod ČR, která má nadústavní právní sílu.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_21",
-    text: "Přestupku se může dopustit",
-    options: [
-      "jen právnická osoba",
-      "jen podnikající právnická osoba",
-      "jen člověk",
-    ],
-    correctOptionIndex: 2,
+    id: "zk_7",
+    text: "Jediným suverénem uvnitř České republiky je stát.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_22",
-    text: "Blokové řízení",
-    options: [
-      "může být použity k projednání jakéhokoliv přestupku, bez ohledu na jeho charakter",
-      "není správním řízeníma",
-      "vede k uložení pokuty na místě",
-    ],
-    correctOptionIndex: 2,
+    id: "zk_8",
+    text: "Mezi trestní zákony patří trestní zákoník, trestní řád, zákon o soudnictví ve věcech mládeže, zákon o trestní odpovědnosti právnických osob.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 0
   },
   {
-    id: "q_23",
-    text: "Tzv. jiného správního deliktu se může dopustit",
-    options: [
-      "jen právnická osoba",
-      "právnická osoba",
-      "jen fyzická osoba",
-    ],
-    correctOptionIndex: 1,
+    id: "zk_9",
+    text: "Správní rozhodnutí nemusí:",
+    options: ["být písemné", "obsahovat výrok", "obsahovat poučení", "být odůvodněno, pokud žádosti občana zcela vyhovuje"],
+    correctOptionIndex: 3
   },
   {
-    id: "q_24",
-    text: "O přestupcích se vede",
-    options: [
-      "trestní řízení",
-      "správní řízení svého druhu",
-      "občanské soudní řízení",
-    ],
-    correctOptionIndex: 1,
+    id: "zk_10",
+    text: "Soudní činnost nespočívá v:",
+    options: ["rozhodování sporů", "výkonu trestů", "vyslovení viny a trestu", "přezkumu rozhodnutí úřadů a jiných soudů"],
+    correctOptionIndex: 1
   },
   {
-    id: "q_25",
-    text: "Osoba mladší 15-ti let",
-    options: [
-      "není odpovědna za přestupky, kterých se dopustí",
-      "odpovídá za přestupky v plném rozsahu",
-      "odpovíd za přestupky jen v rozsahu v jakém je schopna vnímat škodlivé následky svého jednání",
-    ],
-    correctOptionIndex: 0,
+    id: "zk_11",
+    text: "Právní stát znamená, že pouze kancelář prezidenta je vyňata z povinnosti, které úřadům ukládá zákon.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
+  },
+  {
+    id: "zk_12",
+    text: "U přestupků postačí zavinění z nedbalosti, ledaže zákon stanoví, že se vyžaduje úmyslné zavinění.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 0
+  },
+  {
+    id: "zk_13",
+    text: "Stanoví-li Aarhuská úmluva o přístupu k informacím v záležitostech životního prostředí něco jiného než Zákon o informacích o životním prostředí, použije se tento Zákon.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 1
+  },
+  {
+    id: "zk_14",
+    text: "Zákon o svobodném přístupu k informacím (zákon č. 106)",
+    options: ["upravuje pouze povinnosti úřadů a práva občanů", "podléhá autonomnímu výkladu...", "je sice platný...", "zavazuje pouze orgány samosprávy"],
+    correctOptionIndex: 0
+  },
+  {
+    id: "zk_15",
+    text: "Obecně závazné vyhlášky, které jsou výrazem suverenity samosprávy, mají stejnou sílu jako:",
+    options: ["ústavní zákony", "zákony", "podzákonné právní předpisy", "metodické pokyny"],
+    correctOptionIndex: 2
+  },
+  {
+    id: "zk_16",
+    text: "O vině a trestu mohou rozhodovat výlučně trestní soudy.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 0
+  },
+  {
+    id: "zk_17",
+    text: "Termín \"řád\" v názvu zákona signalizuje, že obsahem zákona je úprava procesního postupu soudů anebo úřadů.",
+    options: ["Ano", "Ne"],
+    correctOptionIndex: 0
+  },
+  {
+    id: "zk_18",
+    text: "Ústavní stížnost argumentuje, že došlo k porušení lidských práv a základních svobod:",
+    options: ["ve sporu", "soudními rozhodnutími", "zákony", "jiným občanem či úřadem"],
+    correctOptionIndex: 2
+  },
+  {
+    id: "zk_19",
+    text: "Státní zastupitelství je v hlavním líčení trestního řízení:",
+    options: ["zástupcem oběti trestného činu", "zástupcem majetkových zájmů státu", "zástupcem poškozeného", "zástupcem veřejnosti"],
+    correctOptionIndex: 0
+  },
+  {
+    id: "zk_20",
+    text: "Odvolací lhůta proti správnímu rozhodnutí činí:",
+    options: ["5 dnů", "15 dnů", "30 dnů", "ve složitých případech až 60 dnů"],
+    correctOptionIndex: 1
   }
 ];

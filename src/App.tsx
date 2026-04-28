@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { StartScreen } from './components/StartScreen';
+import { ZkouskaSetupScreen } from './components/ZkouskaSetupScreen';
 import { QuizScreen } from './components/QuizScreen';
 import { SummaryScreen } from './components/SummaryScreen';
 import { ReviewScreen } from './components/ReviewScreen';
 import { AuroraBackground } from './components/AuroraBackground';
-import { predefinedQuestions } from './data/questions';
+import { predefinedQuestions, zkouskaQuestions } from './data/questions';
 import { QuizState, Question } from './types';
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -29,10 +31,11 @@ function shuffleOptionsForQuestion(question: Question): Question {
 
 export default function App() {
   const [state, setState] = useState<QuizState>({
-    questions: predefinedQuestions,
+    questions: [],
     currentQuestionIndex: 0,
     answers: {},
-    status: 'quiz'
+    status: 'start',
+    mode: undefined
   });
   
   const [error, setError] = useState<string | undefined>();
@@ -48,11 +51,45 @@ export default function App() {
     return () => clearInterval(interval);
   }, [state.status]);
 
-  const currentQuestion = state.questions[state.currentQuestionIndex];
+  const handleSelectMode = (mode: 'zapocet' | 'zkouska') => {
+    if (mode === 'zapocet') {
+      setState({
+        questions: predefinedQuestions,
+        currentQuestionIndex: 0,
+        answers: {},
+        status: 'quiz',
+        mode: 'zapocet'
+      });
+      setSessionTime(0);
+    } else {
+      setState({
+        questions: zkouskaQuestions,
+        currentQuestionIndex: 0,
+        answers: {},
+        status: 'quiz',
+        mode: 'zkouska'
+      });
+      setSessionTime(0);
+    }
+  };
+
+  const handleStartZkouska = (questions: Question[]) => {
+    setState({
+      questions,
+      currentQuestionIndex: 0,
+      answers: {},
+      status: 'quiz',
+      mode: 'zkouska'
+    });
+    setSessionTime(0);
+  };
 
   const handleAnswer = (optionIndex: number) => {
     setState(prev => {
-      const newAnswers = { ...prev.answers, [currentQuestion.id]: optionIndex };
+      const currentQ = prev.questions[prev.currentQuestionIndex];
+      if (!currentQ) return prev;
+
+      const newAnswers = { ...prev.answers, [currentQ.id]: optionIndex };
       
       let nextIndex = prev.currentQuestionIndex + 1;
       
@@ -89,7 +126,7 @@ export default function App() {
   };
 
   const handleRetake = (randomizeQuestions: boolean, randomizeAnswers: boolean) => {
-    let newQuestions = [...predefinedQuestions];
+    let newQuestions = state.mode === 'zkouska' ? [...state.questions] : [...predefinedQuestions];
     
     if (randomizeAnswers) {
       newQuestions = newQuestions.map(shuffleOptionsForQuestion);
@@ -111,10 +148,11 @@ export default function App() {
 
   const handleRestart = () => {
     setState({
-      questions: predefinedQuestions,
+      questions: [],
       currentQuestionIndex: 0,
       answers: {},
-      status: 'quiz'
+      status: 'start',
+      mode: undefined
     });
     setSessionTime(0);
     setError(undefined);
@@ -220,7 +258,18 @@ export default function App() {
       <main className="flex-1 flex overflow-hidden relative w-full h-[calc(100vh-88px)]">
         <AuroraBackground />
         
-        {state.status === 'quiz' && (
+        {state.status === 'start' && (
+          <StartScreen onSelectMode={handleSelectMode} />
+        )}
+        
+        {state.status === 'zkouska_setup' && (
+          <ZkouskaSetupScreen 
+            onBack={() => setState(prev => ({ ...prev, status: 'start' }))} 
+            onStartQuiz={handleStartZkouska} 
+          />
+        )}
+
+        {state.status === 'quiz' && state.questions.length > 0 && (
           <QuizScreen 
             questions={state.questions} 
             answers={state.answers}

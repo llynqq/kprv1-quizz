@@ -9,5 +9,6 @@ export interface QuizState {
   questions: Question[];
   currentQuestionIndex: number;
   answers: Record<string, number>; 
-  status: 'upload' | 'loading' | 'quiz' | 'summary' | 'review';
+  status: 'start' | 'quiz' | 'summary' | 'review' | 'zkouska_setup';
+  mode?: 'zapocet' | 'zkouska';
 }
