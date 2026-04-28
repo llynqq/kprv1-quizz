@@ -53,15 +53,35 @@ export default function App() {
   const handleAnswer = (optionIndex: number) => {
     setState(prev => {
       const newAnswers = { ...prev.answers, [currentQuestion.id]: optionIndex };
-      const isComplete = prev.currentQuestionIndex >= prev.questions.length - 1;
+      
+      let nextIndex = prev.currentQuestionIndex + 1;
+      
+      if (nextIndex >= prev.questions.length) {
+        const firstUnanswered = prev.questions.findIndex(q => newAnswers[q.id] === undefined);
+        if (firstUnanswered !== -1) {
+          nextIndex = firstUnanswered;
+        } else {
+          return {
+            ...prev,
+            answers: newAnswers,
+            status: 'summary'
+          };
+        }
+      }
       
       return {
         ...prev,
         answers: newAnswers,
-        currentQuestionIndex: isComplete ? prev.currentQuestionIndex : prev.currentQuestionIndex + 1,
-        status: isComplete ? 'summary' : 'quiz'
+        currentQuestionIndex: nextIndex
       };
     });
+  };
+
+  const handleJumpToQuestion = (index: number) => {
+    setState(prev => ({
+      ...prev,
+      currentQuestionIndex: index
+    }));
   };
 
   const handleEndSession = () => {
@@ -203,9 +223,11 @@ export default function App() {
         {state.status === 'quiz' && (
           <QuizScreen 
             questions={state.questions} 
+            answers={state.answers}
             currentQuestionIndex={state.currentQuestionIndex} 
             onAnswer={handleAnswer} 
             onEndSession={handleEndSession} 
+            onJumpToQuestion={handleJumpToQuestion}
             accuracy={accuracy}
           />
         )}
